@@ -6,5 +6,5 @@
 
 <p align="justify">
 	Dotfiles are configuration files for Unix-like operating systems, such as Linux and macOS, that are used to customize the behavior of the shell, applications, and various system settings.
-	This are my dotfiles configuration for my operating systems.
+	These are my dotfiles configuration for my operating systems.
 </p>
