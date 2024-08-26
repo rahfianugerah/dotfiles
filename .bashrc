@@ -93,6 +93,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias update='sudo apt update -y'
 alias upgrade='sudo apt upgrade -y'
+alias py='python3'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
