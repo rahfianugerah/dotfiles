@@ -55,5 +55,48 @@ else
     echo "Miniconda3 installation completed."
 fi
 
-# Reload the shell to apply Miniconda3 and Node.js environment changes
+# Install Zsh if not already installed
+if command -v zsh &> /dev/null; then
+    echo "Zsh is already installed."
+else
+    echo "Zsh is not installed. Installing Zsh..."
+
+    # Install Zsh
+    sudo apt-get update
+    sudo apt-get install -y zsh
+
+    echo "Zsh installation completed."
+fi
+
+# Change the default shell to Zsh
+chsh -s $(which zsh)
+echo "Default shell changed to Zsh."
+
+# Check if Oh My Zsh is installed
+if [ -d "$HOME/.oh-my-zsh" ]; then
+    echo "Oh My Zsh is already installed."
+else
+    echo "Oh My Zsh is not installed. Installing Oh My Zsh..."
+
+    # Install Oh My Zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    echo "Oh My Zsh installation completed."
+fi
+
+# Set Zsh theme in .zshrc
+echo "Changing the Zsh theme in .zshrc ..."
+
+# Backup the current .zshrc file
+cp ~/.zshrc ~/.zshrc.backup
+
+# Modify the theme in .zshrc
+sed -i 's/^ZSH_THEME=.*/ZSH_THEME="lambda"/' ~/.zshrc
+
+echo "Zsh theme is set."
+
+# Print final message
+echo "Installaion Completed... Welcome home..."
+
+# Reload the shell to apply environment changes
 exec "$SHELL"
