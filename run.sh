@@ -55,6 +55,33 @@ else
     echo "Miniconda3 installation completed."
 fi
 
+# Check if Visual Studio Code is installed
+if command -v code &> /dev/null; then
+    echo "Visual Studio Code is already installed."
+else
+    echo "Visual Studio Code is not installed. Installing Visual Studio Code..."
+
+    # Download and install Visual Studio Code
+    sudo apt-get update
+    sudo apt-get install -y wget gpg
+
+    # Import the Microsoft GPG key
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+    sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+
+    # Add the VSCode repository to your sources list
+    sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+    # Install Visual Studio Code
+    sudo apt-get update
+    sudo apt-get install -y code
+
+    # Cleanup GPG key
+    rm -f packages.microsoft.gpg
+
+    echo "Visual Studio Code installation completed."
+fi
+
 # Install Zsh if not already installed
 if command -v zsh &> /dev/null; then
     echo "Zsh is already installed."
