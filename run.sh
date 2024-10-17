@@ -67,7 +67,8 @@ echo " _________________________________________
       //   \ \
      (|     | )
     /'\_   _/`\
-    \___)=(___/"
+    \___)=(___/
+"
 
 # Install Zsh if not already installed
 if command -v zsh &> /dev/null; then
