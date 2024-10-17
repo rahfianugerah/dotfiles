@@ -55,20 +55,21 @@ else
     echo "Miniconda3 installation completed."
 fi
 
-echo " _________________________________________
+cat << "EOF"
+ _________________________________________
 / Welcome home sir!, Your setup will be   \
 \ ready immediately. Please wait...       /
  -----------------------------------------
-   \\
-    \\
+   \
+    \
         .--.
        |o_o |
        |:_/ |
-      //   \\\\
+      //   \ \
      (|     | )
-    /'\\_   _/'\\
-    \\___)=(___/
-"
+    /'\_   _/'\
+    \___)=(___/
+EOF
 
 # Install Zsh if not already installed
 if command -v zsh &> /dev/null; then
