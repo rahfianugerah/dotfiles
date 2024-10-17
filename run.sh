@@ -59,15 +59,15 @@ echo " _________________________________________
 / Welcome home sir!, Your setup will be   \
 \ ready immediately. Please wait...       /
  -----------------------------------------
-   \
-    \
+   \\
+    \\
         .--.
        |o_o |
        |:_/ |
-      //   \ \
+      //   \\\\
      (|     | )
-    /'\_   _/`\
-    \___)=(___/
+    /'\\_   _/'\\
+    \\___)=(___/
 "
 
 # Install Zsh if not already installed
