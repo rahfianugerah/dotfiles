@@ -1,0 +1,9 @@
+tensorflow
+pandas
+numpy
+seaborn
+matplotlib
+plotly
+flask
+fastapi
+sqlalchemy
