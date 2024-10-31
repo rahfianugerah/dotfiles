@@ -186,12 +186,3 @@ else
 
     echo "Oh My Zsh installation completed."
 fi
-
-# Set Zsh theme in .zshrc
-echo "Changing the Zsh theme in .zshrc ..."
-
-# Backup the current .zshrc file
-cp ~/.zshrc ~/.zshrc.backup
-
-# Modify the theme in .zshrc
-sed -i 's/^ZSH_THEME=.*/ZSH_THEME="lambda"/' ~/.zshrc
