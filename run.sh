@@ -1,5 +1,15 @@
 #!/bin/bash
 
+cat << "EOF"
+        .--.
+       |o_o |    config-script: run.sh
+       |:_/ |    version: 1.0
+      //   \ \   author(github): rahfianugerah
+     (|     | )  repository: rahfianugerah/dotfiles
+    /'\_   _/'\
+    \___)=(___/
+EOF
+
 # Prompt for user name for Git configuration
 read -p "Enter your name for Git configuration: " name
 # Prompt for user email for Git configuration
