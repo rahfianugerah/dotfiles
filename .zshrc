@@ -137,10 +137,10 @@ alias startmysql='sudo systemctl start mysql'
 alias stopmysql='sudo systemctl stop mysql'
 
 # Port aliases
-alias checkport='sudo lsof -t -i -P -n | grep LISTEN'
+alias checkport='sudo lsof -i -P -n | grep LISTEN'
 alias checkport1='sudo netstat -tuln'
 alias checkport2='sudo ss -tuln'
-alias killallport='sudo lsof -t -i -P -n | xargs sudo kill'
+alias killallport='sudo lsof -i -P -n | xargs sudo kill'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
