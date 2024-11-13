@@ -9,3 +9,6 @@ flask
 fastapi
 sqlalchemy
 kaggle
+mysql-connector-python
+beutifulsoup4
+requests

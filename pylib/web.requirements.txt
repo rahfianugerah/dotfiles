@@ -1,0 +1,7 @@
+flask
+django
+fastapi
+mysql-connector-python
+sqlalchemy
+beutifulsoup4
+requests
