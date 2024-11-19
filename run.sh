@@ -141,6 +141,58 @@ else
     fi
 fi
 
+# Docker Installation
+if command -v docker &> /dev/null; then
+    echo "Docker is already installed."
+else
+    echo "Docker is not installed. Installing Docker..."
+
+    # Update the package list
+    sudo apt-get update
+
+    # Install prerequisite packages
+    sudo apt-get install -y \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        software-properties-common
+
+    # Add Docker's official GPG key
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+    # Add Docker's stable repository
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    # Update package list again to include Docker's repository
+    sudo apt-get update
+
+    # Install Docker
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+    # Start and enable Docker
+    sudo systemctl start docker
+    sudo systemctl enable docker
+
+    echo "Docker installation completed."
+fi
+
+# Configure Docker to run as a non-root user
+if groups | grep -q "\bdocker\b"; then
+    echo "User already belongs to the 'docker' group."
+else
+    echo "Adding user to the 'docker' group to enable non-root usage..."
+    sudo usermod -aG docker $USER
+    echo "You need to log out and back in for the group change to take effect."
+fi
+
+# Ensure Docker is working
+if docker --version &> /dev/null; then
+    echo "Docker is installed and working: $(docker --version)"
+else
+    echo "Docker installation failed or not configured properly."
+fi
+
+
 
 cat << "EOF"
  _________________________________________
