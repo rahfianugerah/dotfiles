@@ -126,15 +126,21 @@ alias activate='conda activate'
 alias deactivate='conda deactivate'
 alias rmenv='conda env remove --name'
 
-# Web server aliases
+# Nginx server aliases
 alias startnginx='sudo systemctl start nginx'
 alias stopnginx='sudo systemctl stop nginx'
+
+# Apache2 server aliases
 alias startapache2='sudo systemctl start apache2'
 alias stopapache2='sudo systemctl stop apache2'
+alias enableapache2='sudo systemctl enable apache2'
+alias disableapache2='sudo systemctl disable apache2'
 
 # Databases server aliases
 alias startmysql='sudo systemctl start mysql'
 alias stopmysql='sudo systemctl stop mysql'
+alias enablemysql='sudo systemctl enable mysql'
+alias disablemysql='sudo systemctl disable mysql'
 
 # Port aliases
 alias checkport='sudo lsof -i -P -n | grep LISTEN'
