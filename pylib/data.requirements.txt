@@ -9,5 +9,5 @@ fastapi
 sqlalchemy
 kaggle
 mysql-connector-python
-beutifulsoup4
+beautifulsoup4
 requests

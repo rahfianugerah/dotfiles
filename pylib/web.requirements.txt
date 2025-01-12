@@ -3,6 +3,6 @@ django
 fastapi
 mysql-connector-python
 sqlalchemy
-beutifulsoup4
+beautifulsoup4
 requests
 uvicorn
