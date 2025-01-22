@@ -73,5 +73,17 @@ else
   echo "unzip is already installed."
 fi
 
+# Install MariaDB
+if ! pacman -Qi mariadb &>/dev/null; then
+  echo "Installing MariaDB..."
+  sudo pacman -S mariadb
+  echo "Initializing MariaDB database..."
+  sudo mariadb_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+  echo "Finish installing MariaDB service."
+else
+  echo "MariaDB is already installed."
+fi
+
+
 # Final message
 echo "All requested software has been installed or is already present."
