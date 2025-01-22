@@ -6,7 +6,7 @@
 
 #### Overview
 <p align=justify>
-    Dotfiles are configuration files on Unix-based systems (like Linux or macOS) that are typically hidden by default, as their names start with a dot (.), which makes them “dotfiles”. This repository contains my personal dotfiles, and feel free to use this settings for your working environment.Also, don't forget to leave some stars...
+    Dotfiles are configuration files on Unix-based systems (like Linux or macOS) that are typically hidden by default, as their names start with a dot (.), which makes them “dotfiles”. This repository contains my personal dotfiles, and feel free to use this settings for your working environment. Also, don't forget to leave some stars!
 </p>
 
 #### License
