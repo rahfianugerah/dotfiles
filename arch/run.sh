@@ -49,5 +49,29 @@ else
   echo "Visual Studio Code is already installed."
 fi
 
+# Install lsof
+if ! pacman -Qi lsof &>/dev/null; then
+  echo "Installing lsof..."
+  sudo pacman -S lsof
+else
+  echo "lsof is already installed."
+fi
+
+# Install net-tools
+if ! pacman -Qi net-tools &>/dev/null; then
+  echo "Installing net-tools..."
+  sudo pacman -S net-tools
+else
+  echo "net-tools is already installed."
+fi
+
+# Install unzip
+if ! pacman -Qi unzip &>/dev/null; then
+  echo "Installing unzip..."
+  sudo pacman -S unzip
+else
+  echo "unzip is already installed."
+fi
+
 # Final message
 echo "All requested software has been installed or is already present."
