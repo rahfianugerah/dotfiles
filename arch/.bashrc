@@ -40,6 +40,10 @@ alias search='pacman -Ss'
 alias clean='sudo pacman -Sc'
 alias cleanall='sudo pacman -Scc'
 
+# iwctl commands
+alias startiwctl='sudo systemctl start iwctl'
+
+
 # Others
 alias cls='clear'
 alias ..='cd ..'
