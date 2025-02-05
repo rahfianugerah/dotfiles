@@ -48,6 +48,13 @@ alias restartiwctl='sudo systemctl restart iwctl'
 alias enableiwctl='sudo systemctl enable iwctl'
 alias disableiwctl='sudo systemctl disable iwctl'
 
+# Docker commands
+alias startdocker='sudo systemctl start docker'
+alias stopdocker='sudo systemctl stop docker'
+alias restartdocker='sudo systemctl restart docker'
+alias enabledocker='sudo systemctl enable docker'
+alias disabledocker='sudo systemctl disable docker'
+
 # Check active ports
 alias checkport='sudo lsof -i -P -n | grep LISTEN'
 alias checkport1='sudo netstat -tulnp'
