@@ -39,17 +39,37 @@ alias remove='sudo pacman -R'
 alias search='pacman -Ss'
 alias clean='sudo pacman -Sc'
 alias cleanall='sudo pacman -Scc'
+alias orphans='sudo pacman -Qdt'
 
 # iwctl commands
 alias startiwctl='sudo systemctl start iwctl'
 
+# Check active ports
+alias checkport='sudo lsof -i -P -n | grep LISTEN'
+alias checkport1='sudo netstat -tulnp'
+alias checkport2='sudo netstat -tuln'
 
-# Others
+# Edit configuration files
+alias editbashrc='nano ~/.bashrc'
+alias editbashprofile='nano ~/.bash_profile'
+alias editvimrc='nano ~/.vimrc'
+alias editzshrc='nano ~/.zshrc'
+alias editgitconfig='nano ~/.gitconfig'
+alias editstarshipconfig='nano ~/.config/starship.toml'
+alias editfastfetchconfig='nano ~/.config/fastfetch/fastfetch.conf'
+
+# System commands
 alias cls='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -lh'
 alias l='ls -CF'
+alias c='clear'
+alias h='history'
+alias j='jobs -l'
+alias p='ps aux'
+alias reboot='sudo reboot'
+alias shutdown='sudo shutdown now'
 
 PS1='[\u@\h \W]\$ '
 
