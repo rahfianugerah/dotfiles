@@ -41,8 +41,12 @@ alias clean='sudo pacman -Sc'
 alias cleanall='sudo pacman -Scc'
 alias orphans='sudo pacman -Qdt'
 
-# iwctl commands
+# Network commands
 alias startiwctl='sudo systemctl start iwctl'
+alias stopiwctl='sudo systemctl stop iwctl'
+alias restartiwctl='sudo systemctl restart iwctl'
+alias enableiwctl='sudo systemctl enable iwctl'
+alias disableiwctl='sudo systemctl disable iwctl'
 
 # Check active ports
 alias checkport='sudo lsof -i -P -n | grep LISTEN'
