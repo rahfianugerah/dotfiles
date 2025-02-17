@@ -148,6 +148,19 @@ alias checkport1='sudo netstat -tuln'
 alias checkport2='sudo ss -tuln'
 alias killallport='sudo lsof -i -P -n | xargs sudo kill'
 
+# System commands
+alias cls='clear'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='ls -lh'
+alias l='ls -CF'
+alias c='clear'
+alias h='history'
+alias j='jobs -l'
+alias p='ps aux'
+alias reboot='sudo reboot'
+alias shutdown='sudo shutdown now'
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

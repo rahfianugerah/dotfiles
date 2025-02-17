@@ -139,6 +139,19 @@ alias checkport1='sudo netstat -tuln'
 alias checkport2='sudo ss -tuln'
 alias killallport='sudo lsof -t -i -P -n | xargs sudo kill'
 
+# System commands
+alias cls='clear'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='ls -lh'
+alias l='ls -CF'
+alias c='clear'
+alias h='history'
+alias j='jobs -l'
+alias p='ps aux'
+alias reboot='sudo reboot'
+alias shutdown='sudo shutdown now'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
