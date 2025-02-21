@@ -99,7 +99,10 @@ fi
 # ~/.bashrc
 
 # Starship
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
+
+#Oh my posh
+eval "$(oh-my-posh init bash)"
 
 # Fastfetch
 fastfetch
