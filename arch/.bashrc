@@ -40,6 +40,7 @@ alias search='pacman -Ss'
 alias clean='sudo pacman -Sc'
 alias cleanall='sudo pacman -Scc'
 alias orphans='sudo pacman -Qdt'
+alias removeorphans='sudo pacman -Rns $(pacman -Qdtq)'
 
 # Network commands
 alias startiwctl='sudo systemctl start iwctl'
@@ -102,7 +103,7 @@ fi
 # eval "$(starship init bash)"
 
 #Oh my posh
-eval "$(oh-my-posh init bash)"
+eval "$(oh-my-posh init bash --config $HOME/dotfiles/omp/)"
 
 # Fastfetch
 fastfetch
