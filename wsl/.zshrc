@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="lambda"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,6 +76,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Only go home if this is a top-level login and we are in /mnt
+if [ "$SHLVL" -eq 1 ] && [[ "$PWD" == /mnt/c/* ]]; then
+    cd ~
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -141,6 +146,12 @@ alias startmysql='sudo systemctl start mysql'
 alias stopmysql='sudo systemctl stop mysql'
 alias enablemysql='sudo systemctl enable mysql'
 alias disablemysql='sudo systemctl disable mysql'
+
+# PostgreSQL server aliases
+alias startpostgresql='sudo systemctl start postgresql'
+alias stoppostgresql='sudo systemctl stop postgresql'
+alias enablepostgresql='sudo systemctl enable postgresql'
+alias disablepostgresql='sudo systemctl disable postgresql'
 
 # Port aliases
 alias checkport='sudo lsof -i -P -n | grep LISTEN'

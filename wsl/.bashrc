@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Only go home if this is a top-level login and we are in /mnt
+if [ "$SHLVL" -eq 1 ] && [[ "$PWD" == /mnt/c/* ]]; then
+    cd ~
+fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -132,6 +137,12 @@ alias startmysql='sudo systemctl start mysql'
 alias stopmysql='sudo systemctl stop mysql'
 alias enablemysql='sudo systemctl enable mysql'
 alias disablemysql='sudo systemctl disable mysql'
+
+# PostgreSQL server aliases
+alias startpostgresql='sudo systemctl start postgresql'
+alias stoppostgresql='sudo systemctl stop postgresql'
+alias enablepostgresql='sudo systemctl enable postgresql'
+alias disablepostgresql='sudo systemctl disable postgresql'
 
 # Port aliases
 alias checkport='sudo lsof -i -P -n | grep LISTEN'
