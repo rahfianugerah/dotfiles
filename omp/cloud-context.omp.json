@@ -15,6 +15,7 @@
     "talosctl-text": "#FF6C00",
     "symbol-color": "#ffffff",
     "timer-text": "#dd0033",
+    "active-text": "#1eff00",
     "base-text": "#ffffff"
   },
   "blocks": [
@@ -25,29 +26,29 @@
         {
           "foreground": "p:os",
           "style": "plain",
-          "template": " {{.Icon}} ",
+          "template": " {{.Icon}}",
           "type": "os"
         },
         {
           "foreground": "p:base-text",
           "style": "plain",
-          "template": " {{ .UserName }}@{{ .HostName }} ",
+          "template": " {{ .UserName }}@{{ .HostName }}",
           "type": "session"
         },
         {
           "foreground": "p:base-text",
-          "template": " \uf489 {{ .Name }} ",
+          "template": " \uf489 {{ .Name }}",
           "type": "shell"
         },
         {
           "foreground": "p:base-text",
-          "template": " \ue266 MEM: {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB \ue266 ",
+          "template": " \ue266 MEM: {{ round .PhysicalPercentUsed .Precision }}% - {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB",
           "type": "sysinfo"
         },
         {
           "type": "python",
           "style": "plain",
-          "foreground": "p:base-text",
+          "foreground": "p:active-text",
           "options": {
             "display_virtual_env": true,
             "display_default": true,
@@ -55,7 +56,7 @@
             "home_enabled": true,
             "display_mode": "always"
           },
-          "template": " \uE235 {{ .Venv }} "
+          "template": " <p:symbol-color>\uE235</> {{ .Venv }}"
         },
         {
           "background": "p:background-color",
@@ -65,7 +66,7 @@
           },
           "style": "powerline",
           "powerline_symbol": "",
-          "template": " <p:symbol-color>\uebaa</> {{ dateInZone .Format .CurrentDate \"UTC\" }} ",
+          "template": " <p:symbol-color>\uebaa</> {{ dateInZone .Format .CurrentDate \"UTC\" }}",
           "type": "time"
         },
         {
