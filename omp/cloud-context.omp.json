@@ -4,9 +4,9 @@
   "console_title_template": "{{ if or .Root .Segments.Git.RepoName }}[ {{ if .Root }}Admin{{ end }}{{ if and .Root .Segments.Git.RepoName }}@{{ end }}{{ if .Segments.Git.RepoName }}{{ .Segments.Git.RepoName }}{{ end }} ]{{ end }} {{ .Folder }}",
   "palette": {
     "background-color": "transparent",
-    "cloud-text-amazon": "#4285F4",
-    "cloud-text-azure": "#4285F4",
-    "cloud-text-gcp": "#4285F4",
+    "cloud-text-amazon": "#ff9900",
+    "cloud-text-azure": "#0078d4",
+    "cloud-text-gcp": "#d6d6d6",
     "cloud-text-firebase": "#FFA000",
     "error-background": "#dd0033",
     "error-text": "#242424",
@@ -14,13 +14,49 @@
     "kubernetes-text": "#FFBB00",
     "talosctl-text": "#FF6C00",
     "symbol-color": "#ffffff",
-    "timer-text": "#dd0033"
+    "timer-text": "#dd0033",
+    "base-text": "#ffffff"
   },
   "blocks": [
     {
       "alignment": "left",
       "newline": false,
       "segments": [
+        {
+          "foreground": "p:os",
+          "style": "plain",
+          "template": " {{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "foreground": "p:base-text",
+          "style": "plain",
+          "template": " {{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "p:base-text",
+          "template": " \uf489 {{ .Name }} ",
+          "type": "shell"
+        },
+        {
+          "foreground": "p:base-text",
+          "template": " \ue266 MEM: {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB \ue266 ",
+          "type": "sysinfo"
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "p:base-text",
+          "options": {
+            "display_virtual_env": true,
+            "display_default": true,
+            "display_version": false,
+            "home_enabled": true,
+            "display_mode": "always"
+          },
+          "template": " \uE235 {{ .Venv }} "
+        },
         {
           "background": "p:background-color",
           "foreground": "p:timer-text",
