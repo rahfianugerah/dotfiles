@@ -32,7 +32,7 @@
         {
           "foreground": "p:base-text",
           "style": "plain",
-          "template": " {{ .UserName }}@{{ .HostName }}",
+            "template": " {{ .UserName | lower }}@{{ .HostName | lower }}",
           "type": "session"
         },
         {
