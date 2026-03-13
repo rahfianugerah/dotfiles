@@ -26,7 +26,7 @@
         {
           "foreground": "p:os",
           "style": "plain",
-          "template": " {{.Icon}}",
+          "template": "{{.Icon}}",
           "type": "os"
         },
         {
@@ -168,7 +168,7 @@
           "leading_diamond": " \ue0c5",
           "trailing_diamond": "\ue0c4",
           "style": "diamond",
-          "template": "{{ if ne .Code 0 }} \uf00d {{ .Code }}{{ if (ne (reason .Code) (toString .Code)) }} - {{ reason .Code }}{{else}}{{ end }} {{ end }}",
+          "template": " {{ if ne .Code 0 }} \uf00d {{ .Code }}{{ if (ne (reason .Code) (toString .Code)) }} - {{ reason .Code }}{{else}}{{ end }} {{ end }}",
           "type": "status"
         }
       ],
@@ -186,7 +186,7 @@
           },
           "style": "powerline",
           "powerline_symbol": "",
-          "template": " <p:symbol-color>\uf49b</> {{ .CurrentDate | date .Format }} ",
+          "template": "<p:symbol-color>\uf49b</> {{ .CurrentDate | date .Format }} ",
           "type": "time"
         },
         {
@@ -226,14 +226,14 @@
           "style": "diamond",
           "leading_diamond": "\ue0c7",
           "trailing_diamond": "\ue0c6",
-          "template": " \uf0e7 ",
+          "template": "\uf0e7",
           "type": "root"
         },
         {
           "background": "p:background-color",
           "foreground": "p:git-text",
           "style": "plain",
-          "template": "{{ if .Root }}{{ else }}<p:symbol-color> > </>{{ end }}",
+          "template": "{{ if .Root }}{{ else }}<p:active-text>user-prompt> </>{{ end }}",
           "type": "text"
         }
       ],
