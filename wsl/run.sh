@@ -3,7 +3,7 @@
 cat << "EOF"
         .--.
        |o_o |    config-script: run.sh
-       |:_/ |    version: 1.0
+       |:_/ |    version: 1.1
       //   \ \   author(github): rahfianugerah
      (|     | )  repository: rahfianugerah/dotfiles
     /'\_   _/'\
@@ -37,7 +37,7 @@ else
     echo "NVM is not installed. Installing NVM..."
 
     # Download and install NVM
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
     # Load NVM into the current shell session
     export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -190,33 +190,4 @@ if docker --version &> /dev/null; then
     echo "Docker is installed and working: $(docker --version)"
 else
     echo "Docker installation failed or not configured properly."
-fi
-
-# Install Zsh if not already installed
-if command -v zsh &> /dev/null; then
-    echo "Zsh is already installed."
-else
-    echo "Zsh is not installed. Installing Zsh..."
-
-    # Install Zsh
-    sudo apt-get update
-    sudo apt-get install -y zsh
-
-    echo "Zsh installation completed."
-fi
-
-# Change the default shell to Zsh
-chsh -s $(which zsh)
-echo "Default shell changed to Zsh."
-
-# Check if Oh My Zsh is installed
-if [ -d "$HOME/.oh-my-zsh" ]; then
-    echo "Oh My Zsh is already installed."
-else
-    echo "Oh My Zsh is not installed. Installing Oh My Zsh..."
-
-    # Install Oh My Zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-    echo "Oh My Zsh installation completed."
 fi
