@@ -1,8 +1,0 @@
-flask
-django
-fastapi
-mysql-connector-python
-sqlalchemy
-beautifulsoup4
-requests
-uvicorn
