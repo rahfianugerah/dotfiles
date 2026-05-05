@@ -221,19 +221,10 @@
       "newline": true,
       "segments": [
         {
-          "background": "p:error-background",
-          "foreground": "p:backgrond-color",
-          "style": "diamond",
-          "leading_diamond": "\ue0c7",
-          "trailing_diamond": "\ue0c6",
-          "template": "\uf0e7",
-          "type": "root"
-        },
-        {
           "background": "p:background-color",
           "foreground": "p:git-text",
           "style": "plain",
-          "template": "{{ if .Root }}{{ else }}<p:active-text>user-prompt> </>{{ end }}",
+          "template": "{{ if .Root }}<p:active-text>root-administrator> </>{{ else }}<p:active-text>user-prompt> </>{{ end }}",
           "type": "text"
         }
       ],
